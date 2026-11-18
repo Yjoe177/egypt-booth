@@ -1,6 +1,10 @@
 # 🇪🇬 Egypt Booth: Guide for You & Your Helper
 
-## Start the booth (30 seconds)
+## Easiest: use the website
+Open **https://yjoe177.github.io/egypt-booth/** in Chrome or Edge, on the laptop or any phone. Nothing to install, and the camera and microphone work there too. Visitors can also play on their own phones: put the link (or a QR code of it) on your booth table!
+
+## Offline: start the booth from the laptop (30 seconds)
+Use this if the university Wi-Fi is bad.
 1. Double-click **`START_BOOTH.bat`**. A black window opens (keep it open), then the browser opens the dashboard.
 2. Press **F** (or the ⛶ button) for fullscreen.
 3. Turn the laptop volume **up**. The games have music, drums, honks and a talking shopkeeper.
