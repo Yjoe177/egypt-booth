@@ -155,3 +155,7 @@
   .dash { height: auto; }
   .card .art { height: 26vh; flex: none; }
 }
+@media (max-width: 1000px), (max-height: 520px) {
+  .card .art { overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .card .art svg { width: auto; height: 100%; max-width: 90%; }
+}
