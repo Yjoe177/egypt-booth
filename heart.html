@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#10234a">
+<meta name="description" content="Egypt booth: 4 funny interactive Egyptian games. Weighing of the Heart, Haggle in the Bazaar, Mummy Wrap Race, Cross a Cairo Street.">
+<title>Weighing of the Heart · ميزان القلب</title>
+<link rel="stylesheet" href="css/base.css?v=20261118c">
+<link rel="stylesheet" href="css/heart.css?v=20261118c">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔺</text></svg>">
+</head>
+<body>
+<div class="hall" aria-hidden="true">
+  <div class="columns"></div>
+  <div class="torch t1"><span>🔥</span></div><div class="torch t2"><span>🔥</span></div>
+  <div class="rays" id="rays"></div>
+</div>
+
+<!-- INTRO -->
+<section class="screen active" id="intro">
+  <div class="intro-card">
+    <div class="eyebrow">⚖️ The Hall of Two Truths</div>
+    <h1>Weighing of the Heart</h1>
+    <div class="ar big">ميزان القلب</div>
+    <p class="story">When an ancient Egyptian died, the god <b>Anubis</b> put their heart on a scale against the <b>Feather of Truth</b>. Light heart → paradise 🌾. Heavy with sins → <b>Ammit the Devourer</b> 🐊 ate it. <i>Forever.</i></p>
+    <p class="rule">Answer <b>7 confessions</b> honestly. <span class="warn">Your friends are watching. 👀</span></p>
+    <label class="name-lbl">Your name for your <b>Afterlife Passport</b> (optional)
+      <input id="playerName" maxlength="14" placeholder="e.g. Sara" autocomplete="off" spellcheck="false">
+    </label>
+    <div class="name-preview" id="namePreview"></div>
+    <button class="btn red big-btn" id="startBtn">Enter the Hall <span class="key">Enter</span></button>
+  </div>
+</section>
+
+<!-- GAME -->
+<section class="screen" id="game">
+  <div class="stage">
+    <div class="scale-wrap" id="scaleWrap">
+      <svg id="scaleSvg" viewBox="0 0 600 470" aria-label="The scale">
+        <defs>
+          <linearGradient id="g-gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0b8"/><stop offset=".45" stop-color="#e3b23c"/><stop offset="1" stop-color="#8f5d0e"/></linearGradient>
+          <radialGradient id="g-heart" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#ff7a6b"/><stop offset=".6" stop-color="#d42a22"/><stop offset="1" stop-color="#7d0f0b"/></radialGradient>
+          <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <!-- Anubis behind -->
+        <g id="anubis" transform="translate(300,36) scale(1.45)" opacity=".92">
+          <path d="M-30,320 L-34,120 Q-36,70 0,60 Q36,70 34,120 L30,320Z" fill="#111827"/>
+          <path d="M-40,135 Q0,165 40,135 L44,160 Q0,195 -44,160Z" fill="url(#g-gold)"/>
+          <path d="M-40,160 Q0,192 40,160" stroke="#2b56a6" stroke-width="6" fill="none"/>
+          <path d="M-16,62 L-26,-6 L-4,40 Z M14,62 L22,-6 L4,40 Z" fill="#0b0f19"/>
+          <path d="M-20,66 Q0,26 22,58 L72,82 Q76,92 66,96 L18,98 Q-18,110 -20,66Z" fill="#0b0f19"/>
+          <circle cx="16" cy="66" r="4.5" fill="#e3b23c" class="anubis-eye"/>
+        </g>
+        <!-- pillar -->
+        <rect x="290" y="96" width="20" height="330" rx="6" fill="url(#g-gold)"/>
+        <path d="M230,440 L370,440 L350,418 L250,418Z" fill="url(#g-gold)"/>
+        <rect x="210" y="440" width="180" height="16" rx="6" fill="#8f5d0e"/>
+        <circle cx="300" cy="84" r="20" fill="url(#g-gold)"/>
+        <path d="M300,40 L312,64 L288,64Z" fill="url(#g-gold)"/>
+        <!-- beam -->
+        <g id="beam">
+          <rect x="70" y="84" width="460" height="14" rx="7" fill="url(#g-gold)"/>
+          <circle cx="80" cy="91" r="9" fill="#8f5d0e"/><circle cx="520" cy="91" r="9" fill="#8f5d0e"/>
+          <path d="M300,98 L292,130 L308,130Z" fill="#c0392b" id="needle"/>
+        </g>
+        <!-- left pan: heart -->
+        <g id="panL">
+          <line x1="0" y1="0" x2="-62" y2="160" stroke="#e3b23c" stroke-width="3"/>
+          <line x1="0" y1="0" x2="62" y2="160" stroke="#e3b23c" stroke-width="3"/>
+          <line x1="0" y1="0" x2="0" y2="160" stroke="#e3b23c" stroke-width="2" opacity=".6"/>
+          <g id="heartG" transform="translate(0,118)">
+            <g id="heartInner">
+              <path d="M0,40 C-48,6 -52,-30 -26,-38 C-12,-42 -2,-32 0,-22 C2,-32 12,-42 26,-38 C52,-30 48,6 0,40Z" fill="url(#g-heart)" stroke="#5a0906" stroke-width="3" id="heartPath"/>
+              <path d="M-18,-26 q-10,6 -8,18" stroke="#fff" stroke-width="5" stroke-linecap="round" fill="none" opacity=".6"/>
+              <g id="heartFace">
+                <circle cx="-12" cy="-4" r="4" fill="#2a0504"/><circle cx="12" cy="-4" r="4" fill="#2a0504"/>
+                <path id="heartMouth" d="M-9,10 Q0,18 9,10" stroke="#2a0504" stroke-width="3" fill="none" stroke-linecap="round"/>
+              </g>
+              <g id="sweat" opacity="0"><path d="M30,-30 q6,10 0,14 q-6,-4 0,-14z" fill="#7fd3ff"/><path d="M-34,-18 q5,9 0,12 q-5,-3 0,-12z" fill="#7fd3ff"/></g>
+            </g>
+          </g>
+          <path d="M-80,160 L80,160 Q70,196 0,198 Q-70,196 -80,160Z" fill="url(#g-gold)" stroke="#8f5d0e" stroke-width="2"/>
+        </g>
+        <!-- right pan: feather -->
+        <g id="panR">
+          <line x1="0" y1="0" x2="-62" y2="160" stroke="#e3b23c" stroke-width="3"/>
+          <line x1="0" y1="0" x2="62" y2="160" stroke="#e3b23c" stroke-width="3"/>
+          <line x1="0" y1="0" x2="0" y2="160" stroke="#e3b23c" stroke-width="2" opacity=".6"/>
+          <g id="feather" transform="translate(0,96)">
+            <path d="M2,60 C-26,30 -24,-26 6,-62 C16,-30 26,20 2,60Z" fill="#fffdf5" stroke="#cfc6ad" stroke-width="2"/>
+            <path d="M2,60 C4,20 6,-20 6,-62" stroke="#b9ad8c" stroke-width="2" fill="none"/>
+            <g stroke="#ded5bb" stroke-width="1.5"><line x1="4" y1="40" x2="-14" y2="26"/><line x1="5" y1="20" x2="-18" y2="2"/><line x1="5" y1="0" x2="-17" y2="-20"/><line x1="6" y1="-20" x2="-12" y2="-40"/><line x1="4" y1="30" x2="16" y2="16"/><line x1="5" y1="8" x2="19" y2="-8"/></g>
+          </g>
+          <path d="M-80,160 L80,160 Q70,196 0,198 Q-70,196 -80,160Z" fill="url(#g-gold)" stroke="#8f5d0e" stroke-width="2"/>
+        </g>
+        <text x="300" y="30" text-anchor="middle" class="scale-label" id="weightLabel">Heart: 0 deben</text>
+      </svg>
+      <div class="pan-tag left">YOUR HEART ❤️</div>
+      <div class="pan-tag right">FEATHER OF TRUTH 🪶</div>
+    </div>
+
+    <div class="panel">
+      <div class="progress" id="progress"></div>
+      <div class="qcard" id="qcard">
+        <div class="qnum" id="qnum">Confession 1 of 7</div>
+        <div class="qtext" id="qtext">…</div>
+      </div>
+      <div class="answers" id="answers">
+        <button class="btn red ans" id="yesBtn">😬 YES, guilty <span class="key">Y</span></button>
+        <button class="btn green ans" id="noBtn">😇 NO, innocent <span class="key">N</span></button>
+      </div>
+      <div class="liar" id="liar" hidden>
+        <div class="liar-title">🚨 LIE DETECTOR 🚨</div>
+        <div class="liar-text">Anubis's ears are twitching… <b>FRIENDS!</b> Was that really the truth?</div>
+        <div class="answers">
+          <button class="btn red ans" id="liarBtn">🤥 LIAR! <span class="key">L</span></button>
+          <button class="btn blue ans" id="truthBtn">✅ It's true <span class="key">T</span></button>
+        </div>
+      </div>
+      <div class="evt" id="evt" hidden></div>
+      <div class="thoth" id="thoth"><span class="who">📜 Thoth the scribe:</span> <span id="thothText">"I am ready to write down your sins."</span></div>
+    </div>
+  </div>
+
+  <!-- Ammit -->
+  <div class="ammit" id="ammit">
+    <svg viewBox="0 0 320 220">
+      <g class="mane">
+        <path d="M70,40 l-14,-30 l26,18 l6,-28 l14,30 l18,-24 l2,32 l26,-12 l-10,30 l30,4 l-24,20 l28,18 l-30,6 l14,28 l-30,-10 l-2,32 l-20,-24 l-16,28 l-6,-32 l-28,14 l10,-30 l-30,-6 l26,-18 l-24,-22 l32,0z" fill="#d1912f"/>
+      </g>
+      <g class="jaw-low">
+        <path d="M84,128 L282,120 Q300,128 288,142 Q190,176 80,162Z" fill="#3c6e2d"/>
+        <path d="M110,129 l6,-12 l6,12 M140,128 l6,-12 l6,12 M170,127 l6,-12 l6,12 M200,126 l6,-12 l6,12 M230,124 l6,-12 l6,12 M258,123 l6,-12 l6,12" fill="#fff" stroke="#fff" stroke-width="2"/>
+      </g>
+      <g class="jaw-up">
+        <path d="M70,96 Q120,52 220,70 Q290,82 304,104 Q306,120 286,122 L84,130 Q62,120 70,96Z" fill="#5a9a44"/>
+        <path d="M110,129 l6,12 l6,-12 M140,128 l6,12 l6,-12 M170,127 l6,12 l6,-12 M200,126 l6,12 l6,-12 M230,124 l6,12 l6,-12 M258,123 l6,12 l6,-12" fill="#fff" stroke="#fff" stroke-width="2"/>
+        <circle cx="290" cy="100" r="4" fill="#24451b"/>
+        <g class="ammit-eye"><ellipse cx="132" cy="76" rx="16" ry="14" fill="#fff4a8"/><ellipse cx="135" cy="77" rx="4" ry="11" fill="#111"/><path d="M114,66 Q132,54 150,66" stroke="#24451b" stroke-width="6" fill="none" stroke-linecap="round" class="brow"/></g>
+        <g fill="#4c8a3a"><circle cx="180" cy="72" r="5"/><circle cx="210" cy="78" r="5"/><circle cx="240" cy="84" r="4"/></g>
+      </g>
+      <path class="tongue" d="M200,140 q20,30 10,50 q-10,-16 -14,-48z" fill="#e0556b" opacity="0"/>
+    </svg>
+    <div class="ammit-say" id="ammitSay">nom?</div>
+  </div>
+
+  <div class="verdict" id="verdict" hidden></div>
+  <div class="cat" id="cat" hidden>🐈</div>
+  <div class="koshary-feather" id="kFeather" hidden>🍲</div>
+</section>
+
+<script src="js/common.js?v=20261118c"></script>
+<script src="js/heart.js?v=20261118c"></script>
+</body>
+</html>

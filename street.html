@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#10234a">
+<meta name="description" content="Egypt booth: 4 funny interactive Egyptian games. Weighing of the Heart, Haggle in the Bazaar, Mummy Wrap Race, Cross a Cairo Street.">
+<title>Cross a Cairo Street · عدّي الشارع</title>
+<link rel="stylesheet" href="css/base.css?v=20261118c">
+<link rel="stylesheet" href="css/street.css?v=20261118c">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔺</text></svg>">
+</head>
+<body>
+<canvas id="world"></canvas>
+
+<!-- HUD -->
+<div class="hud" id="hud" hidden>
+  <div class="h-street"><span class="lbl">📍 Now crossing</span><b id="hStreet">Zamalek</b></div>
+  <div class="h-time"><b id="hTime">60</b><span>sec</span></div>
+  <div class="h-score"><span class="lbl">Score</span><b id="hScore">0</b><div class="bowls" id="hBowls"></div></div>
+  <div class="h-hand"><span class="lbl">✋ Cairo hand power</span><div class="pbar"><i id="hPower"></i></div><span class="hint" id="hHint">Hold H / raise your hand</span></div>
+</div>
+<div class="event" id="event" hidden></div>
+<div class="touch" id="touch" hidden>
+  <div class="t-left"><button data-k="left" aria-label="Move left">◀</button><button data-k="right" aria-label="Move right">▶</button></div>
+  <div class="t-right"><button data-k="hand" class="t-hand" aria-label="Raise hand">✋</button><button data-k="up" class="t-up" aria-label="Go forward">⬆</button></div>
+</div>
+<div class="popups" id="popups"></div>
+
+<!-- camera preview -->
+<div class="cam-box" id="camBox" hidden>
+  <video id="video" playsinline muted></video>
+  <canvas id="skel"></canvas>
+  <div class="cam-status" id="camStatus">👀</div>
+</div>
+
+<!-- INTRO -->
+<section class="overlay" id="intro">
+  <div class="intro-card">
+    <div class="eyebrow">🚦 There are no traffic lights. Only faith.</div>
+    <h1>Cross a Cairo Street</h1>
+    <div class="ar big">عدّي الشارع</div>
+    <p class="story">In Cairo, cars don't stop for you. You raise your hand, look the driver in the eye… and <b>WALK</b>. 🖐️ Cross as many streets as you can in <b>60 seconds</b>. Each street is crazier than the last!</p>
+    <div class="modes">
+      <button class="mode" id="modeCam">
+        <span class="m-ico">📷🕺</span>
+        <b>Play with your BODY</b>
+        <span>Step left/right to move · <b>JUMP</b> to go forward · <b>Raise your hand</b> to stop cars</span>
+        <span class="key">C</span>
+      </button>
+      <button class="mode" id="modeKey">
+        <span class="m-ico">⌨️</span>
+        <b class="kb-only">Play with the keyboard</b><b class="touch-only">Play with touch buttons</b>
+        <span class="kb-only">← → move · <b>↑ / Space</b> go forward · ↓ back · hold <b>H</b> to stop cars</span>
+        <span class="touch-only">◀ ▶ move · <b>⬆</b> or swipe up = forward · hold <b>✋</b> to stop cars</span>
+        <span class="key">K</span>
+      </button>
+    </div>
+    <div class="legend">
+      <span>🧆 🥙 ⭐ snacks = bonus points</span><span>🍞 catch the bread bike!</span><span>😱 near misses = +5</span>
+    </div>
+  </div>
+</section>
+
+<section class="overlay" id="loading" hidden>
+  <div class="load-card"><div class="spinner">🚦</div><h2 id="loadMsg">Loading the AI traffic police… 👮</h2><p id="loadSub">This takes a few seconds the first time.</p>
+    <button class="btn ghost small" id="loadCancel">⌨️ Use keyboard instead</button></div>
+</section>
+
+<section class="overlay" id="calib" hidden>
+  <div class="calib-card">
+    <h2>🙌 Raise BOTH hands to start!</h2>
+    <p>Stand back so the camera can see your <b>head, shoulders and hands</b>.</p>
+    <div class="calib-ring"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="8"/><circle id="calibArc" cx="50" cy="50" r="44" fill="none" stroke="#e3b23c" stroke-width="8" stroke-linecap="round" stroke-dasharray="276.5" stroke-dashoffset="276.5" transform="rotate(-90 50 50)"/></svg><span id="calibTxt">🙋</span></div>
+    <p class="small" id="calibState">Looking for you…</p>
+    <button class="btn ghost small" id="calibKey">⌨️ Switch to keyboard</button>
+  </div>
+</section>
+
+<div class="countdown" id="countdown" hidden><div id="cdNum">3</div></div>
+
+<script src="js/common.js?v=20261118c"></script>
+<script src="js/street.js?v=20261118c"></script>
+</body>
+</html>

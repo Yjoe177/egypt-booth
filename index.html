@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#10234a">
+<meta name="description" content="Egypt booth: 4 funny interactive Egyptian games. Weighing of the Heart, Haggle in the Bazaar, Mummy Wrap Race, Cross a Cairo Street.">
+<title>Egypt Booth · أهلاً وسهلاً</title>
+<link rel="stylesheet" href="css/base.css?v=20261118c">
+<link rel="stylesheet" href="css/dashboard.css?v=20261118c">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔺</text></svg>">
+</head>
+<body>
+<div class="scene" aria-hidden="true">
+  <div class="sky"></div>
+  <div class="stars" id="stars"></div>
+  <div class="sun"></div>
+  <svg class="pyramids" viewBox="0 0 1600 420" preserveAspectRatio="xMidYMax slice">
+    <defs>
+      <linearGradient id="pyL" x1="0" x2="1"><stop offset="0" stop-color="#f3c771"/><stop offset="1" stop-color="#d9993f"/></linearGradient>
+      <linearGradient id="pyR" x1="0" x2="1"><stop offset="0" stop-color="#9c5a2a"/><stop offset="1" stop-color="#6e3b1c"/></linearGradient>
+      <linearGradient id="dune1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e2a85a"/><stop offset="1" stop-color="#b8762f"/></linearGradient>
+      <linearGradient id="dune2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c98a43"/><stop offset="1" stop-color="#8f5524"/></linearGradient>
+    </defs>
+    <!-- far pyramid (Menkaure) -->
+    <polygon points="1130,330 1235,215 1340,330" fill="url(#pyL)" opacity=".85"/>
+    <polygon points="1235,215 1340,330 1255,330" fill="url(#pyR)" opacity=".85"/>
+    <!-- Great pyramid (Khufu) -->
+    <polygon points="380,340 640,60 900,340" fill="url(#pyL)"/>
+    <polygon points="640,60 900,340 690,340" fill="url(#pyR)"/>
+    <g stroke="#b47a35" stroke-width="2" opacity=".35">
+      <line x1="430" y1="286" x2="852" y2="286"/><line x1="480" y1="232" x2="802" y2="232"/><line x1="530" y1="178" x2="752" y2="178"/><line x1="580" y1="124" x2="700" y2="124"/>
+    </g>
+    <!-- Khafre (with casing top) -->
+    <polygon points="820,340 1010,120 1200,340" fill="url(#pyL)"/>
+    <polygon points="1010,120 1200,340 1045,340" fill="url(#pyR)"/>
+    <polygon points="990,143 1010,120 1030,143" fill="#fbe2a6"/>
+    <!-- Sphinx silhouette -->
+    <g class="sphinx" transform="translate(180,282)">
+      <path d="M0,58 L0,30 Q10,24 40,24 L120,22 Q150,20 160,10 L162,-18 Q166,-34 182,-34 Q198,-34 200,-16 L202,8 Q206,14 214,20 L222,58 Z" fill="#a8672e"/>
+      <path d="M168,-30 L160,10 L206,10 L198,-30 Q184,-40 168,-30Z" fill="#c4823e"/>
+      <rect x="-10" y="50" width="250" height="10" fill="#8f5524"/>
+    </g>
+    <path d="M0,330 Q200,300 420,335 T900,330 T1400,325 T1600,330 L1600,420 L0,420Z" fill="url(#dune1)"/>
+    <path d="M0,370 Q300,340 600,372 T1200,365 T1600,360 L1600,420 L0,420Z" fill="url(#dune2)"/>
+  </svg>
+  <div class="caravan"><span>🐪</span><span>🐫</span><span>🐪</span></div>
+  <div class="nile">
+    <div class="shimmer"></div>
+    <div class="felucca">⛵</div>
+    <div class="felucca f2">⛵</div>
+  </div>
+  <div class="palm p1">🌴</div><div class="palm p2">🌴</div>
+</div>
+
+<div class="frieze top"></div>
+
+<main class="dash">
+  <header class="brand">
+    <svg class="winged-sun" viewBox="0 0 400 110" aria-hidden="true">
+      <defs><linearGradient id="gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0b8"/><stop offset=".5" stop-color="#e3b23c"/><stop offset="1" stop-color="#9a6a12"/></linearGradient></defs>
+      <g fill="url(#gold)">
+        <path d="M200,55 C150,20 90,18 10,30 C60,38 100,48 140,58 C100,56 60,58 20,66 C70,70 110,70 150,68 C120,74 90,82 60,92 C110,92 150,84 180,72 Z"/>
+        <path d="M200,55 C250,20 310,18 390,30 C340,38 300,48 260,58 C300,56 340,58 380,66 C330,70 290,70 250,68 C280,74 310,82 340,92 C290,92 250,84 220,72 Z"/>
+      </g>
+      <g stroke="#7a4f0a" stroke-width="1.5" opacity=".5" fill="none">
+        <path d="M40,32 C90,36 120,46 150,56"/><path d="M360,32 C310,36 280,46 250,56"/>
+        <path d="M60,64 C100,66 130,66 160,64"/><path d="M340,64 C300,66 270,66 240,64"/>
+      </g>
+      <circle cx="200" cy="55" r="27" fill="#d9482b" stroke="url(#gold)" stroke-width="6"/>
+      <path d="M178,60 q-10,-18 4,-30 M222,60 q10,-18 -4,-30" stroke="url(#gold)" stroke-width="5" fill="none"/>
+    </svg>
+    <div class="titles">
+      <h1 class="egypt"><span class="ar-title">مصر</span><span class="en-title">EGYPT</span></h1>
+      <p class="welcome"><span class="ar">أهلاً وسهلاً</span> Ahlan wa Sahlan! <span class="dim">· Welcome to the Egyptian Booth · Pick a game!</span></p>
+    </div>
+  </header>
+
+  <section class="cards" id="cards">
+    <a class="card c1" href="heart.html" data-key="1" style="--d:.05s">
+      <div class="num">1</div>
+      <div class="art">
+        <svg viewBox="0 0 200 140" class="art-heart">
+          <rect x="96" y="40" width="8" height="90" rx="3" fill="#e3b23c"/>
+          <rect x="70" y="124" width="60" height="10" rx="4" fill="#a8781a"/>
+          <circle cx="100" cy="36" r="9" fill="#f6d77e"/>
+          <g class="beam">
+            <rect x="30" y="34" width="140" height="6" rx="3" fill="#f6d77e"/>
+            <g class="panL"><line x1="40" y1="37" x2="28" y2="80" stroke="#f6d77e" stroke-width="2"/><line x1="40" y1="37" x2="52" y2="80" stroke="#f6d77e" stroke-width="2"/><path d="M20,80 h40 q-4,14 -20,14 q-16,0 -20,-14z" fill="#e3b23c"/><path d="M40,78 c-10,-8 -14,-18 -6,-22 c4,-2 6,0 6,3 c0,-3 2,-5 6,-3 c8,4 4,14 -6,22z" fill="#d9362b"/></g>
+            <g class="panR"><line x1="160" y1="37" x2="148" y2="80" stroke="#f6d77e" stroke-width="2"/><line x1="160" y1="37" x2="172" y2="80" stroke="#f6d77e" stroke-width="2"/><path d="M140,80 h40 q-4,14 -20,14 q-16,0 -20,-14z" fill="#e3b23c"/><path d="M160,78 q-6,-14 2,-26 q4,10 -2,26z M160,77 q8,-10 4,-22" fill="#fff" stroke="#ddd"/></g>
+          </g>
+        </svg>
+      </div>
+      <h2>Weighing of the Heart</h2>
+      <p class="ar-sub">ميزان القلب</p>
+      <p class="tag">Confess to the gods. Bribe Anubis. Survive the cat. <b>Too heavy? Ammit is hungry.</b></p>
+      <div class="meta"><span>⏱ 1 min</span><span>👤 1 player</span><span>😇 Honesty</span></div>
+    </a>
+
+    <a class="card c2" href="haggle.html" data-key="2" style="--d:.15s">
+      <div class="num">2</div>
+      <div class="art">
+        <svg viewBox="0 0 200 140" class="art-haggle">
+          <g class="lantern">
+            <line x1="62" y1="0" x2="62" y2="22" stroke="#a8781a" stroke-width="2"/>
+            <path d="M52,22 h20 l6,10 h-32z" fill="#e3b23c"/>
+            <path d="M46,32 h32 l10,38 l-10,30 h-32 l-10,-30z" fill="#c0392b" stroke="#e3b23c" stroke-width="3"/>
+            <path d="M54,40 l8,30 l8,-30" stroke="#f6d77e" stroke-width="2" fill="none"/>
+            <path d="M46,100 h32 l-6,10 h-20z" fill="#e3b23c"/>
+            <circle cx="62" cy="70" r="12" fill="#ffd36b" class="glow"/>
+          </g>
+          <g class="tag-swing">
+            <line x1="140" y1="10" x2="140" y2="40" stroke="#e8d09b" stroke-width="2"/>
+            <path d="M110,40 h60 l14,22 l-14,22 h-60z" fill="#f8ecd0" stroke="#a8781a" stroke-width="3"/>
+            <circle cx="170" cy="62" r="4" fill="#a8781a"/>
+            <text x="137" y="70" text-anchor="middle" font-family="Lalezar, Impact" font-size="26" fill="#c0392b">500?!</text>
+          </g>
+        </svg>
+      </div>
+      <h2>Haggle in the Bazaar</h2>
+      <p class="ar-sub">الفصال في خان الخليلي</p>
+      <p class="tag">Uncle Sayed, Hagga Fatma or Mido? They say 500. <b>How low can YOU go?</b></p>
+      <div class="meta"><span>⏱ 1.5 min</span><span>👤 1 player</span><span>⌨️ Type offers</span></div>
+    </a>
+
+    <a class="card c3" href="mummy.html" data-key="3" style="--d:.25s">
+      <div class="num">3</div>
+      <div class="art">
+        <svg viewBox="0 0 200 140" class="art-mummy">
+          <g class="mummy-head">
+            <ellipse cx="100" cy="72" rx="46" ry="54" fill="#efe6d2"/>
+            <g stroke="#c9b993" stroke-width="7" stroke-linecap="round" fill="none">
+              <path d="M56,40 q44,-14 88,6"/><path d="M54,58 q46,10 92,-6"/><path d="M56,92 q44,-10 90,6"/><path d="M60,110 q40,10 80,-4"/><path d="M64,26 q36,-12 70,2"/>
+            </g>
+            <rect x="60" y="64" width="80" height="22" rx="10" fill="#2a1d12"/>
+            <circle class="eye" cx="82" cy="75" r="7" fill="#fff"/><circle class="eye" cx="118" cy="75" r="7" fill="#fff"/>
+            <circle class="pupil" cx="84" cy="76" r="3.5" fill="#111"/><circle class="pupil" cx="120" cy="76" r="3.5" fill="#111"/>
+            <path d="M140,100 q30,10 34,36" stroke="#efe6d2" stroke-width="7" fill="none" stroke-linecap="round" class="strip"/>
+          </g>
+          <text x="24" y="40" font-size="28">🧻</text>
+        </svg>
+      </div>
+      <h2>Mummy Wrap Race</h2>
+      <p class="ar-sub">سباق المومياء</p>
+      <p class="tag">Toilet paper, 60 seconds, pharaoh curses. <b>Turn your friend into a mummy!</b></p>
+      <div class="meta"><span>⏱ 1 min</span><span>👥 2 teams</span><span>📣 Crowd votes</span></div>
+    </a>
+
+    <a class="card c4" href="street.html" data-key="4" style="--d:.35s">
+      <div class="num">4</div>
+      <div class="art">
+        <svg viewBox="0 0 200 140" class="art-street">
+          <rect x="0" y="96" width="200" height="44" fill="#3a3f47"/>
+          <g stroke="#f6d77e" stroke-width="4" stroke-dasharray="14 10"><line x1="0" y1="118" x2="200" y2="118"/></g>
+          <g class="bus">
+            <rect x="20" y="58" width="110" height="46" rx="10" fill="#f4f1ea"/>
+            <rect x="20" y="82" width="110" height="7" fill="#2b56a6"/>
+            <rect x="30" y="64" width="18" height="14" rx="3" fill="#7fb7d9"/><rect x="52" y="64" width="18" height="14" rx="3" fill="#7fb7d9"/><rect x="74" y="64" width="18" height="14" rx="3" fill="#7fb7d9"/><rect x="96" y="64" width="24" height="14" rx="3" fill="#7fb7d9"/>
+            <circle cx="42" cy="105" r="9" fill="#222"/><circle cx="108" cy="105" r="9" fill="#222"/>
+            <circle cx="40" cy="62" r="5" fill="#8b5a3c"/><circle cx="62" cy="62" r="5" fill="#5c3a22"/>
+          </g>
+          <g class="walker">
+            <circle cx="166" cy="56" r="9" fill="#8b5a3c"/>
+            <rect x="158" y="66" width="16" height="26" rx="6" fill="#e3b23c"/>
+            <line x1="172" y1="70" x2="186" y2="44" stroke="#8b5a3c" stroke-width="5" stroke-linecap="round" class="hand"/>
+            <line x1="162" y1="92" x2="158" y2="110" stroke="#2b3a55" stroke-width="5" stroke-linecap="round"/><line x1="170" y1="92" x2="174" y2="110" stroke="#2b3a55" stroke-width="5" stroke-linecap="round"/>
+          </g>
+          <text x="140" y="40" font-size="20" class="honk">📢</text>
+        </svg>
+      </div>
+      <h2>Cross a Cairo Street</h2>
+      <p class="ar-sub">عدّي الشارع</p>
+      <p class="tag">Jump, dodge &amp; raise your hand to stop traffic. <b>The Cairo way!</b></p>
+      <div class="meta"><span>⏱ 1 min</span><span>👤 1 player</span><span>📷 Camera</span></div>
+    </a>
+  </section>
+
+  <footer class="ticker">
+    <div class="ticker-label">🤓 DID YOU KNOW?</div>
+    <div class="ticker-text" id="fact"></div>
+  </footer>
+</main>
+
+<div class="corner">
+  <button class="iconbtn" id="nameBtn" title="Your name in hieroglyphs (N)">𓂀</button>
+  <button class="iconbtn" id="muteBtn" title="Sound (M)">🔊</button>
+  <button class="iconbtn" id="fsBtn" title="Fullscreen (F)">⛶</button>
+</div>
+
+<div class="modal" id="nameModal" hidden>
+  <div class="modal-card">
+    <button class="iconbtn close" id="nameClose" aria-label="Close">✕</button>
+    <h2>Your Name in Hieroglyphs <span class="ar">اسمك بالهيروغليفي</span></h2>
+    <p>Type your name and see how a pharaoh would have written it 3,000 years ago.</p>
+    <input id="nameInput" maxlength="16" placeholder="Type your name…" autocomplete="off" spellcheck="false">
+    <div class="name-out" id="nameOut"></div>
+    <div class="legend" id="nameLegend"></div>
+    <p class="small">The oval frame is a <b>cartouche</b>. Only pharaohs had their names in one, so today you're royalty. 👑</p>
+  </div>
+</div>
+
+<script src="js/common.js?v=20261118c"></script>
+<script src="js/dashboard.js?v=20261118c"></script>
+</body>
+</html>
