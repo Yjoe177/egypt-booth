@@ -37,16 +37,16 @@
   ];
 
   const CURSES = [
-    { t: "🦩 ONE HAND ONLY!", s: "Wrappers: use only ONE hand for 10 seconds!" },
-    { t: "🙈 EYES CLOSED!", s: "Wrappers: close your eyes! Mummies: guide them with your voice!" },
-    { t: "💃 DANCING MUMMIES!", s: "Mummies must DANCE while being wrapped! 🎶" },
-    { t: "🐫 CAMEL NOISES!", s: "Everyone makes camel noises for 10 seconds. Yes, the crowd too!" },
-    { t: "🧊 FREEZE!", s: "NOBODY MOVES! The pharaoh is watching… 👀", freeze: 5 },
-    { t: "🌀 SPIN!", s: "Mummies: spin around 3 times! Wrappers: keep wrapping!" },
-    { t: "👑 PHARAOH POSE!", s: "Mummies: cross your arms on your chest like a real pharaoh! Hold it!" },
-    { t: "🐢 SLOW MOTION!", s: "Everybody moves in sloooow mooootion for 10 seconds!" },
-    { t: "📣 YALLA YALLA!", s: "Wrappers: shout “YALLA!” every time you go around the mummy!" },
-    { t: "🦶 ONE LEG!", s: "Mummies: stand on ONE leg like a flamingo! 🦩" },
+    { t: "🦩 ONE HAND ONLY!", s: "Wrappers: use only ONE hand for 10 seconds!", z: "只能用一只手！" },
+    { t: "🙈 EYES CLOSED!", s: "Wrappers: close your eyes! Mummies: guide them with your voice!", z: "闭上眼睛！" },
+    { t: "💃 DANCING MUMMIES!", s: "Mummies must DANCE while being wrapped! 🎶", z: "木乃伊要跳舞！" },
+    { t: "🐫 CAMEL NOISES!", s: "Everyone makes camel noises for 10 seconds. Yes, the crowd too!", z: "大家学骆驼叫！" },
+    { t: "🧊 FREEZE!", s: "NOBODY MOVES! The pharaoh is watching… 👀", z: "不许动！", freeze: 5 },
+    { t: "🌀 SPIN!", s: "Mummies: spin around 3 times! Wrappers: keep wrapping!", z: "木乃伊转三圈！" },
+    { t: "👑 PHARAOH POSE!", s: "Mummies: cross your arms on your chest like a real pharaoh! Hold it!", z: "法老姿势！" },
+    { t: "🐢 SLOW MOTION!", s: "Everybody moves in sloooow mooootion for 10 seconds!", z: "慢动作！" },
+    { t: "📣 YALLA YALLA!", s: "Wrappers: shout “YALLA!” every time you go around the mummy!", z: "大喊“YALLA！”" },
+    { t: "🦶 ONE LEG!", s: "Mummies: stand on ONE leg like a flamingo! 🦩", z: "单脚站立！" },
   ];
   const PREFIX = ["Ramses", "Tut", "Nefer", "Amenhotep", "Khufu", "Cleo", "Hatshep", "Akhenaten", "Seti", "Thutmose"];
   const SUFFIX = ["the Fluffy", "the Wobbly", "the Crunchy", "the Magnificent", "the Unwrapped", "the Sneezy", "the Burrito", "the Toilet-Papered", "the Slightly Damp", "the Very Itchy", "the Ticklish"];
@@ -77,7 +77,7 @@
     el.teamA.value = randName(); el.teamB.value = randName(el.teamA.value);
   }
   $$(".dice").forEach((b) => (b.onclick = () => { const i = $("#" + b.dataset.for); i.value = randName(i.value); Sfx.pop(); }));
-  let dur = 60;
+  let dur = 120;
   $$(".chip").forEach((c) => (c.onclick = () => { $$(".chip").forEach((x) => x.classList.remove("on")); c.classList.add("on"); dur = +c.dataset.s; Sfx.click(); }));
   el.go.onclick = startRace;
   $("#curseChip").onclick = () => { cursesOn = !cursesOn; $("#curseChip").classList.toggle("on", cursesOn); $("#curseChip").textContent = `😈 Pharaoh's curses: ${cursesOn ? "ON" : "OFF"}`; Sfx.click(); };
@@ -96,7 +96,7 @@
     if (G.names.A === G.names.B) G.names.B = `${pick(PREFIX)} the Second`;
     if (cursesOn) {
       const order = EG.shuffle(CURSES);
-      [0.22, 0.48, 0.74].forEach((f, i) => { const at = Math.round(dur * (1 - f)); if (at > 9) G.curseAt[at] = order[i]; });
+      [0.18, 0.36, 0.54, 0.72].forEach((f, i) => { const at = Math.round(dur * (1 - f)); if (at > 9) G.curseAt[at] = order[i]; });
     }
     hideCurse();
     if (G.A === G.B) G.B += " 2";
@@ -157,7 +157,7 @@
     G.curse = { ...c, left: total, total };
     G.cursesDone.push(c.t);
     const box = $("#curse");
-    box.innerHTML = `<div class="cw">😈 THE PHARAOH'S CURSE 😈</div><div class="ct">${c.t}</div><div class="cs">${c.s}</div>${c.freeze ? `<div class="cfreeze">${total}</div>` : '<div class="cbar"></div>'}`;
+    box.innerHTML = `<div class="cw">😈 THE PHARAOH'S CURSE 😈</div><div class="ct">${c.t}</div><div class="cs">${c.s}${c.z ? `<div class="zh" style="font-size:.85em;color:#ffdf6b;margin-top:2px">${c.z}</div>` : ""}</div>${c.freeze ? `<div class="cfreeze">${total}</div>` : '<div class="cbar"></div>'}`;
     box.hidden = false; box.style.animation = "none"; void box.offsetWidth; box.style.animation = "";
     Sfx.tone(110, 0.6, { type: "sawtooth", vol: 0.2, lp: 700, slide: 70 }); Sfx.tone(233, 0.6, { type: "sawtooth", vol: 0.12, lp: 900, when: 0.05 });
     Sfx.drumroll(0.6);

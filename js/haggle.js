@@ -202,11 +202,11 @@
     const item = pick(ITEMS);
     const seller = SELLERS[Q.get("seller")] || pick(Object.values(SELLERS));
     const open = nice(item.c * rand(9, 14) * seller.openMult);
-    const total = +Q.get("t") || 90;
+    const total = +Q.get("t") || 150;
     const evKinds = EG.shuffle(["phone", "rival", "tea", "cat", "bundle", "blackout"]);
     const forced = Q.get("ev");
     S = {
-      seller, total, evAt: forced ? { [total - 4]: forced } : { [total - 22]: evKinds[0], [total - 52]: evKinds[1] }, ev: null, rival: 0, phone: 0, bundle: null, gift: null,
+      seller, total, evAt: forced ? { [total - 4]: forced } : { [total - 28]: evKinds[0], [total - 68]: evKinds[1], [total - 105]: evKinds[2] }, ev: null, rival: 0, phone: 0, bundle: null, gift: null,
       name: el.name.value.trim() || "Mystery Haggler", item, open, ask: open, floor: nice(item.c * rand(1.15, 1.5)),
       patience: 100, lastOffer: 0, lastTyped: 0, rounds: 0, boost: 0, ghali: 0, lastGhaliRound: -5, compliments: 0, walks: 0, kicks: 0,
       timeLeft: total, over: false, busy: false, hist: [], lastAction: performance.now(), idleSaid: false, hurried: false,
@@ -242,7 +242,7 @@
     if (S.timeLeft === 20 && !S.hurried) { S.hurried = true; say(LL("hurry"), "sly"); Sfx.setTempo(140); }
     if (S.timeLeft <= 10 && S.timeLeft > 0) Sfx.tick();
     if (S.timeLeft <= 0) return timeUp();
-    if (performance.now() - S.lastAction > 15000 && !S.idleSaid) { say(LL("idle"), "sly"); S.idleSaid = true; }
+    if (performance.now() - S.lastAction > 25000 && !S.idleSaid) { say(LL("idle"), "sly"); S.idleSaid = true; }
   }
 
   function updateHud(first) {

@@ -232,19 +232,19 @@
   // ---------- phrases ----------
   const PHRASES = {
     win: [
-      { ar: "مبروك يا حبيبي!", en: "Mabrouk ya Habibi!", tr: "Congratulations, my dear!", gloss: "<b>Mabrouk</b> = congrats · <b>Habibi</b> = my dear (Egyptians call EVERYONE habibi)" },
-      { ar: "عاش يا بطل!", en: "3ash ya Batal!", tr: "Long live the champion!", gloss: "<b>3ash</b> = he lived (= well done!) · <b>Batal</b> = hero · the 3 is the letter ع" },
-      { ar: "يا سلام!", en: "Ya Salaaam!", tr: "Oh WOW! (say it slowly, like a proud auntie)", gloss: "<b>Ya Salam</b> = the Egyptian WOW" },
-      { ar: "جامد جداً!", en: "Gamed Gedan!", tr: "Super solid! (= awesome!)", gloss: "<b>Gamed</b> = solid, tough = cool · <b>Gedan</b> = very" },
+      { ar: "مبروك يا حبيبي!", en: "Mabrouk ya Habibi!", tr: "Congratulations, my dear!", zh: "恭喜你，亲爱的！", gloss: "<b>Mabrouk</b> = congrats · <b>Habibi</b> = my dear (Egyptians call EVERYONE habibi)" },
+      { ar: "عاش يا بطل!", en: "3ash ya Batal!", tr: "Long live the champion!", zh: "冠军万岁！", gloss: "<b>3ash</b> = he lived (= well done!) · <b>Batal</b> = hero · the 3 is the letter ع" },
+      { ar: "يا سلام!", en: "Ya Salaaam!", tr: "Oh WOW! (say it slowly, like a proud auntie)", zh: "哇！太棒了！", gloss: "<b>Ya Salam</b> = the Egyptian WOW" },
+      { ar: "جامد جداً!", en: "Gamed Gedan!", tr: "Super solid! (= awesome!)", zh: "超级厉害！", gloss: "<b>Gamed</b> = solid, tough = cool · <b>Gedan</b> = very" },
     ],
     meh: [
-      { ar: "نص نص", en: "Noss Noss", tr: "Half-half. So-so. The camel shrugs.", gloss: "<b>Noss</b> = half · Egyptians use it for EVERYTHING that is 'meh'" },
-      { ar: "مش بطال", en: "Mesh Battal", tr: "Not bad! (high praise from an Egyptian dad)", gloss: "<b>Mesh</b> = not · <b>Battal</b> = bad" },
+      { ar: "نص نص", en: "Noss Noss", tr: "Half-half. So-so. The camel shrugs.", zh: "一般般～", gloss: "<b>Noss</b> = half · Egyptians use it for EVERYTHING that is 'meh'" },
+      { ar: "مش بطال", en: "Mesh Battal", tr: "Not bad! (high praise from an Egyptian dad)", zh: "还不错！", gloss: "<b>Mesh</b> = not · <b>Battal</b> = bad" },
     ],
     lose: [
-      { ar: "معلش يا حبيبي", en: "Ma3lesh ya Habibi", tr: "Never mind, my dear… it happens to the best of us.", gloss: "<b>Ma3lesh</b> = never mind — the most useful word in Egypt" },
-      { ar: "حظ أوفر المرة الجاية", en: "Hazz Awfar!", tr: "Better luck next time!", gloss: "<b>Hazz</b> = luck · <b>Awfar</b> = more plentiful" },
-      { ar: "يا خسارة!", en: "Ya Khosara!", tr: "What a loss! (said with maximum drama)", gloss: "<b>Khosara</b> = loss / a pity" },
+      { ar: "معلش يا حبيبي", en: "Ma3lesh ya Habibi", tr: "Never mind, my dear… it happens to the best of us.", zh: "没关系，亲爱的～", gloss: "<b>Ma3lesh</b> = never mind — the most useful word in Egypt" },
+      { ar: "حظ أوفر المرة الجاية", en: "Hazz Awfar!", tr: "Better luck next time!", zh: "下次好运！", gloss: "<b>Hazz</b> = luck · <b>Awfar</b> = more plentiful" },
+      { ar: "يا خسارة!", en: "Ya Khosara!", tr: "What a loss! (said with maximum drama)", zh: "太可惜了！", gloss: "<b>Khosara</b> = loss / a pity" },
     ],
   };
   const SIGNOFFS = [
@@ -278,16 +278,17 @@
         <h1 class="closure-ar">${ph.ar}</h1>
         <h2 class="closure-title">${ph.en}</h2>
         <div class="closure-trans">${ph.tr}</div>
+        ${ph.zh ? `<div class="closure-zh">${ph.zh}</div>` : ""}
         ${o.headline ? `<div class="closure-sub">${o.headline}</div>` : ""}
         ${o.stats && o.stats.length ? `<div class="closure-stats">${o.stats.map((s) => `<div class="stat"><b>${s.v}</b><span>${s.k}</span></div>`).join("")}</div>` : ""}
         ${o.extra ? `<div class="closure-extra">${o.extra}</div>` : ""}
         <div class="closure-signoff">${o.signoff || pick(SIGNOFFS)}</div>
         <div class="closure-gloss">📖 ${ph.gloss}</div>
         <div class="closure-actions">
-          <button class="btn green" data-act="replay">🔁 Play again <span class="key">R</span></button>
-          <button class="btn blue" data-act="home">🏠 Other games <span class="key">H</span></button>
+          <button class="btn green" data-act="replay">🔁 Play again <span class="zh-sm">再玩一次</span> <span class="key">R</span></button>
+          <button class="btn blue" data-act="home">🏠 Other games <span class="zh-sm">其他游戏</span> <span class="key">H</span></button>
         </div>
-        <div class="closure-auto">Back to the main screen in <span class="cd">60</span>s</div>
+        <div class="closure-auto">Back to the main screen in <span class="cd">180</span>s</div>
       </div>
       <div class="camel-walk"><span>🐪</span><span style="animation-delay:.3s">🐪</span><span style="animation-delay:.15s">🐫</span></div>`;
     document.body.appendChild(el);
@@ -298,7 +299,7 @@
     const home = () => { Sfx.click(); closeClosure(); goHome(); };
     el.querySelector('[data-act="replay"]').onclick = replay;
     el.querySelector('[data-act="home"]').onclick = home;
-    let left = o.autoHome || 60;
+    let left = o.autoHome || 180;
     const cd = el.querySelector(".cd");
     closureTimer = setInterval(() => { left--; cd.textContent = left; if (left <= 0) home(); }, 1000);
     closureKey = (e) => {

@@ -54,6 +54,16 @@ body { background: #0c0a14; }
 .qcard.enter { animation: qIn .5s cubic-bezier(.2,1.5,.4,1); }
 .qnum { font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: var(--terracotta); font-size: clamp(13px, 1.8vh, 18px); }
 .qtext { font-family: var(--display); font-size: clamp(26px, 4.4vh, 48px); line-height: 1.15; color: var(--lapis); margin-top: .8vh; }
+.qzh { font-size: clamp(17px, 2.7vh, 28px); color: #6b4a2b; line-height: 1.35; margin-top: .9vh; }
+.qzh:empty { display: none; }
+.evt-zh { color: var(--gold-2); font-size: clamp(16px, 2.4vh, 24px); margin-top: -2px; }
+.evt-text .zh { display: inline-block; margin-top: 4px; font-size: .9em; color: #cfe0ff; }
+.btn .two { display: inline-flex; flex-direction: column; align-items: center; line-height: 1.15; }
+.btn .two .zh { font-size: .68em; opacity: .9; }
+.liar-zh { font-size: .85em; color: #ffb3a8; margin-top: 4px; }
+.story-zh { font-size: clamp(14px, 2vh, 18px); color: #6b4a2b; margin: -.4vh auto 1vh; max-width: 720px; }
+.rule-zh { display: block; font-size: .8em; color: #6b4a2b; }
+.answers .ans { letter-spacing: 2px; }
 .answers { display: flex; gap: 16px; justify-content: center; }
 .answers .ans { flex: 1; font-size: clamp(18px, 2.9vh, 30px); padding: .7em .6em; white-space: nowrap; }
 .thoth { background: rgba(0,0,0,.55); border: 2px solid rgba(227,178,60,.5); border-radius: 16px; padding: 1.4vh 1.2vw; font-size: clamp(16px, 2.4vh, 24px); font-weight: 700; color: #fff; min-height: 8vh; }

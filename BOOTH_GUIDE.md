@@ -20,19 +20,19 @@ Use this if the university Wi-Fi is bad.
 | **N** | "Your name in hieroglyphs" (great 10-second demo for people passing by) |
 | **M** | sound on/off · **F** fullscreen |
 
-Every game: **Esc** or 🏠 returns to the dashboard. On the end screen, **R** plays again and **H** goes home. It also returns to the dashboard by itself after 60 s.
+Every game: **Esc** or 🏠 returns to the dashboard. On the end screen, **R** plays again and **H** goes home. It also returns to the dashboard by itself after 3 minutes.
 
 ---
 
-## 1 · ⚖️ Weighing of the Heart (1 min, 1 player)
+## 1 · ⚖️ Weighing of the Heart (2–3 min, 1 player, English + 中文)
 - The visitor types their name (optional; it becomes their hieroglyph cartouche) and presses **Enter**.
-- 7 funny confessions: **Y** = guilty, **N** = innocent.
+- 7 funny confessions (each with a Chinese translation underneath): **Y** = YES, **N** = NO.
 - 🚨 **Lie detector**: sometimes the crowd decides: **L** = liar, **T** = true.
 - **Surprise events** between questions (keys **1/2/3**): Bastet the cat jumps on the scale, Thoth's pop quiz (real Egypt facts), bribe Anubis with koshary, a friend testifies, Ammit's 5-second speed round, Ma'at sneezes (double points).
 - **7 endings**: VIP paradise, Pure heart, "Allegedly pure" (too perfect!), 3 different in-between fates, eaten by Ammit, or "too spicy, even Ammit spat it out".
 - 💡 Host tip: read the confessions out loud and make the friends react.
 
-## 2 · 🛍️ Haggle in the Bazaar (1.5 min, 1 player)
+## 2 · 🛍️ Haggle in the Bazaar (2.5 min, 1 player)
 - A random shopkeeper: **Uncle Sayed** (dramatic), **Hagga Fatma** (strict grandma, loves compliments) or **Mido** (Instagram hustler).
 - Type a number, then **Enter** to make an offer. Tactics: **G** "Ghali awi!" (too expensive) · **C** compliment · **W** walk away · **D** accept his price.
 - **Live events**: phone call (offer fast!), rival tourist (price goes UP in 9 s), tea time (+15 s), the cat breaks a vase, power cut ("darkness discount"), a bundle offer (**Y/N**).
@@ -41,14 +41,14 @@ Every game: **Esc** or 🏠 returns to the dashboard. On the end screen, **R** p
 
 ## 3 · 🧻 Mummy Wrap Race (team game, your helper runs it)
 - Needs **2 rolls of toilet paper** per race (bring plenty, about 20+ rolls) and 4 players (2 teams × wrapper + mummy).
-- Pick team names (🎲 = random funny names), time (45/60/90 s) and keep **😈 Pharaoh's curses ON**.
+- Pick team names (🎲 = random funny names), time (1/2/3 min, default 2) and keep **😈 Pharaoh's curses ON**.
 - **Space** starts it. During the race: **P** pause · **S** stop early.
 - **Curses** pop up mid-race: one hand only, eyes closed, FREEZE, dancing mummies, camel noises, one leg…
 - **Mummy parade + crowd vote**: press **1** then **2**. The crowd screams for each team and the microphone measures it. No mic? Use the "Team wins" buttons.
 - Winner screen: royal mummy names, **C** camera on, **Space** photo, 💾 save, **Enter** finish.
 - 💡 Run it every ~30 min as a "show" to pull a crowd. Have a trash bag ready!
 
-## 4 · 🚦 Cross a Cairo Street (1 min, 1 player)
+## 4 · 🚦 Cross a Cairo Street (2 min, 1 player)
 - **C** = body mode (camera): stand about **2 m** from the laptop so your head, shoulders and hands are visible. Raise **both hands** to start.
   - Step/lean **left-right** to move · **JUMP** to go forward · **raise one hand** to make the cars stop (the Cairo way ✋).
 - **K** = keyboard mode: ← → move · ↑ / Space forward · ↓ back · hold **H** to raise your hand.

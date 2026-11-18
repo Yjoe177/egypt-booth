@@ -29,6 +29,8 @@
 .welcome { margin: .3vh 0 0; font-size: clamp(16px, 2.3vh, 26px); font-weight: 800; color: #fff; text-shadow: 0 2px 6px rgba(0,0,0,.7); }
 .welcome .ar { color: var(--gold-2); margin-right: .3em; }
 .welcome .dim { font-weight: 600; opacity: .85; }
+.welcome .dim-zh { display: block; font-size: .78em; color: var(--gold-2); opacity: .9; margin-top: 2px; }
+.card .ar-sub .zh { display: block; font-size: .66em; color: var(--gold-2); direction: ltr; margin-top: 1px; }
 
 /* cards */
 .cards { flex: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.6vw; min-height: 0; }

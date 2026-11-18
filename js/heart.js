@@ -6,38 +6,38 @@
 
   // ---------- question pool: [text, weight 1-3] ----------
   const POOL = [
-    ["Have you ever said “I'm on my way!” while still in bed?", 2],
-    ["Have you ever eaten food from the shared fridge that wasn't yours?", 3],
-    ["Have you ever pretended to know the lyrics and just mumbled?", 1],
-    ["Have you ever laughed at a joke you didn't understand?", 1],
-    ["Have you ever left someone on “seen” on purpose?", 2],
-    ["Have you ever typed “hahaha” with a totally straight face?", 1],
-    ["Have you ever blamed a bad smell on someone else?", 3],
-    ["Have you ever started an assignment the night before the deadline?", 2],
-    ["Have you ever pretended to be on the phone to avoid someone?", 2],
-    ["Have you ever re-gifted a present you got?", 2],
-    ["Have you ever worn gym clothes all day… and never went to the gym?", 1],
-    ["Have you ever googled yourself?", 1],
-    ["Have you ever said “just one fry” and took five?", 2],
-    ["Have you ever waved back at someone who was waving at someone else?", 1],
-    ["Have you ever cheated in a board game?", 3],
-    ["Have you ever fallen asleep in a lecture?", 2],
-    ["Have you ever watched the next episode WITHOUT your friend?", 3],
-    ["Have you ever said “my phone died” when it didn't?", 3],
-    ["Have you ever pushed a door that clearly said PULL?", 1],
-    ["Have you ever pretended to type something important when the teacher walked by?", 2],
-    ["Have you ever said “5 more minutes” and slept 2 more hours?", 2],
-    ["Have you ever ignored a call and then texted “what's up?”", 2],
-    ["Have you ever taken the last slice of pizza without asking?", 3],
-    ["Have you ever won an argument… in the shower… days later?", 1],
-    ["Have you ever accidentally liked a very old photo while stalking someone?", 3],
-    ["Have you ever blamed the Wi-Fi to escape a video call?", 3],
-    ["Have you ever clicked “I have read the terms and conditions”?", 2],
-    ["Have you ever said “I'm fine” when you were very much NOT fine?", 1],
-    ["Have you ever eaten something that fell on the floor (5-second rule)?", 1],
-    ["Have you ever told your mom you ate, when you didn't?", 2],
-    ["Have you ever copied a friend's homework “just to check”?", 3],
-    ["Have you ever pretended you didn't see someone in the street?", 2],
+    ["Have you ever said “I'm on my way!” while still in bed?", 2, "你有没有躺在床上还说“我在路上了”？"],
+    ["Have you ever eaten food from the shared fridge that wasn't yours?", 3, "你有没有偷吃过共用冰箱里别人的食物？"],
+    ["Have you ever pretended to know the lyrics and just mumbled?", 1, "你有没有假装会唱歌词，其实只是在哼哼？"],
+    ["Have you ever laughed at a joke you didn't understand?", 1, "你有没有听不懂笑话却跟着笑？"],
+    ["Have you ever left someone on “seen” on purpose?", 2, "你有没有故意“已读不回”？"],
+    ["Have you ever typed “hahaha” with a totally straight face?", 1, "你有没有面无表情地打出“哈哈哈”？"],
+    ["Have you ever blamed a bad smell on someone else?", 3, "你有没有把难闻的味道赖到别人身上？"],
+    ["Have you ever started an assignment the night before the deadline?", 2, "你有没有在截止日期前一晚才开始写作业？"],
+    ["Have you ever pretended to be on the phone to avoid someone?", 2, "你有没有假装打电话来躲开某人？"],
+    ["Have you ever re-gifted a present you got?", 2, "你有没有把收到的礼物再转送给别人？"],
+    ["Have you ever worn gym clothes all day… and never went to the gym?", 1, "你有没有穿了一整天运动服……却根本没去健身房？"],
+    ["Have you ever googled yourself?", 1, "你有没有在网上搜索过自己的名字？"],
+    ["Have you ever said “just one fry” and took five?", 2, "你有没有说“就吃一根薯条”，结果拿了五根？"],
+    ["Have you ever waved back at someone who was waving at someone else?", 1, "你有没有对别人挥手，结果人家是在跟别人打招呼？"],
+    ["Have you ever cheated in a board game?", 3, "你有没有在桌游里作弊？"],
+    ["Have you ever fallen asleep in a lecture?", 2, "你有没有在课堂上睡着过？"],
+    ["Have you ever watched the next episode WITHOUT your friend?", 3, "你有没有背着朋友偷偷看了下一集？"],
+    ["Have you ever said “my phone died” when it didn't?", 3, "你有没有骗人说“我手机没电了”？"],
+    ["Have you ever pushed a door that clearly said PULL?", 1, "你有没有推过一扇明明写着“拉”的门？"],
+    ["Have you ever pretended to type something important when the teacher walked by?", 2, "老师走过来时，你有没有假装在打很重要的东西？"],
+    ["Have you ever said “5 more minutes” and slept 2 more hours?", 2, "你有没有说“再睡五分钟”，结果多睡了两个小时？"],
+    ["Have you ever ignored a call and then texted “what's up?”", 2, "你有没有不接电话，然后发消息问“怎么了？”"],
+    ["Have you ever taken the last slice of pizza without asking?", 3, "你有没有没问别人就拿走了最后一块披萨？"],
+    ["Have you ever won an argument… in the shower… days later?", 1, "你有没有几天后在洗澡时才“赢”了一场争论？"],
+    ["Have you ever accidentally liked a very old photo while stalking someone?", 3, "你有没有在偷看别人主页时不小心点赞了很久以前的照片？"],
+    ["Have you ever blamed the Wi-Fi to escape a video call?", 3, "你有没有用“网不好”当借口逃避视频通话？"],
+    ["Have you ever clicked “I have read the terms and conditions”?", 2, "你有没有勾选过“我已阅读条款和条件”？"],
+    ["Have you ever said “I'm fine” when you were very much NOT fine?", 1, "你有没有明明很不好，却说“我没事”？"],
+    ["Have you ever eaten something that fell on the floor (5-second rule)?", 1, "你有没有吃过掉在地上的东西（五秒规则）？"],
+    ["Have you ever told your mom you ate, when you didn't?", 2, "你有没有骗妈妈说你已经吃过饭了？"],
+    ["Have you ever copied a friend's homework “just to check”?", 3, "你有没有“只是参考一下”抄了朋友的作业？"],
+    ["Have you ever pretended you didn't see someone in the street?", 2, "你有没有在街上假装没看见某人？"],
   ];
   const N_Q = 7;
 
@@ -49,15 +49,15 @@
   const NO_LINES = ["The feather believes you. For now. 🪶", "A pure soul… or a very skilled liar? 🤨", "Hmm. Suspicious… but okay.", "Your friends are making faces. Just saying. 👀", "Light as a feather! (allegedly)", "Anubis squints at you… and lets it go."];
 
   const TRIVIA = [
-    ["How did ancient Egyptians remove the brain during mummification?", ["Through the nose 👃", "Through the ear 👂", "They kept it 🧠"], 0, "With a hook, through the nose. Then they threw it away!"],
-    ["Which animal was sacred and pampered in ancient Egypt?", ["Cats 🐈", "Hamsters 🐹", "Penguins 🐧"], 0, "Cats! Hurting one was a serious crime."],
-    ["What did pyramid builders get as part of their pay?", ["Bread & beer 🍞", "Gold coins 🪙", "Camels 🐪"], 0, "Bread and beer, every day. Not slaves: paid workers!"],
-    ["What finally helped scholars read hieroglyphs in 1822?", ["The Rosetta Stone 🪨", "A talking Sphinx 🦁", "Google Translate 📱"], 0, "The Rosetta Stone had the same text in 3 scripts."],
-    ["What is Egypt's famous dish of rice, lentils & pasta?", ["Koshary 🍲", "Pizza 🍕", "Sushi 🍣"], 0, "Koshary! With tomato sauce and crispy onions."],
-    ["Which river is the lifeline of Egypt?", ["The Nile 🌊", "The Amazon 🐊", "The Thames 🇬🇧"], 0, "The Nile: almost every Egyptian lives near it."],
-    ["Which board game did Egyptians play 5,000 years ago?", ["Senet 🎲", "Monopoly 💸", "UNO 🃏"], 0, "Senet! Even Tutankhamun was buried with one."],
-    ["Whose tomb was found almost untouched in 1922?", ["Tutankhamun 👑", "Cleopatra 🐍", "Napoleon 🎩"], 0, "King Tut, with more than 5,000 treasures inside."],
-    ["Which organ did Egyptians think held your mind?", ["The heart ❤️", "The brain 🧠", "The stomach 🍔"], 0, "The heart! That's why it's on this scale right now."],
+    ["How did ancient Egyptians remove the brain during mummification?", ["Through the nose 👃", "Through the ear 👂", "They kept it 🧠"], 0, "With a hook, through the nose. Then they threw it away!", "古埃及人制作木乃伊时，怎样取出大脑？", ["从鼻子", "从耳朵", "保留大脑"]],
+    ["Which animal was sacred and pampered in ancient Egypt?", ["Cats 🐈", "Hamsters 🐹", "Penguins 🐧"], 0, "Cats! Hurting one was a serious crime.", "在古埃及，哪种动物被视为神圣、备受宠爱？", ["猫", "仓鼠", "企鹅"]],
+    ["What did pyramid builders get as part of their pay?", ["Bread & beer 🍞", "Gold coins 🪙", "Camels 🐪"], 0, "Bread and beer, every day. Not slaves: paid workers!", "建造金字塔的工人拿什么当工资？", ["面包和啤酒", "金币", "骆驼"]],
+    ["What finally helped scholars read hieroglyphs in 1822?", ["The Rosetta Stone 🪨", "A talking Sphinx 🦁", "Google Translate 📱"], 0, "The Rosetta Stone had the same text in 3 scripts.", "1822年，是什么帮助学者读懂了象形文字？", ["罗塞塔石碑", "会说话的狮身人面像", "谷歌翻译"]],
+    ["What is Egypt's famous dish of rice, lentils & pasta?", ["Koshary 🍲", "Pizza 🍕", "Sushi 🍣"], 0, "Koshary! With tomato sauce and crispy onions.", "埃及著名的米饭、扁豆和意面混合料理叫什么？", ["库沙丽", "披萨", "寿司"]],
+    ["Which river is the lifeline of Egypt?", ["The Nile 🌊", "The Amazon 🐊", "The Thames 🇬🇧"], 0, "The Nile: almost every Egyptian lives near it.", "哪条河是埃及的生命线？", ["尼罗河", "亚马逊河", "泰晤士河"]],
+    ["Which board game did Egyptians play 5,000 years ago?", ["Senet 🎲", "Monopoly 💸", "UNO 🃏"], 0, "Senet! Even Tutankhamun was buried with one.", "5000年前埃及人玩什么棋盘游戏？", ["塞尼特棋", "大富翁", "UNO"]],
+    ["Whose tomb was found almost untouched in 1922?", ["Tutankhamun 👑", "Cleopatra 🐍", "Napoleon 🎩"], 0, "King Tut, with more than 5,000 treasures inside.", "1922年，谁的陵墓几乎完好无损地被发现？", ["图坦卡蒙", "埃及艳后", "拿破仑"]],
+    ["Which organ did Egyptians think held your mind?", ["The heart ❤️", "The brain 🧠", "The stomach 🍔"], 0, "The heart! That's why it's on this scale right now.", "古埃及人认为哪个器官承载着人的思想？", ["心脏", "大脑", "胃"]],
   ];
 
   const JOBS = {
@@ -77,7 +77,7 @@
     intro: $("#intro"), game: $("#game"), start: $("#startBtn"), nameIn: $("#playerName"), namePrev: $("#namePreview"),
     qcard: $("#qcard"), qnum: $("#qnum"), qtext: $("#qtext"), yes: $("#yesBtn"), no: $("#noBtn"), answers: $("#answers"),
     liar: $("#liar"), liarBtn: $("#liarBtn"), truthBtn: $("#truthBtn"), thoth: $("#thoth"), thothText: $("#thothText"), evt: $("#evt"),
-    progress: $("#progress"), beam: $("#beam"), panL: $("#panL"), panR: $("#panR"), heartInner: $("#heartInner"), heartPath: $("#heartPath"),
+    qzh: $("#qzh"), progress: $("#progress"), beam: $("#beam"), panL: $("#panL"), panR: $("#panR"), heartInner: $("#heartInner"), heartPath: $("#heartPath"),
     heartMouth: $("#heartMouth"), sweat: $("#sweat"), ammit: $("#ammit"), ammitSay: $("#ammitSay"), weightLabel: $("#weightLabel"),
     verdict: $("#verdict"), rays: $("#rays"), scaleWrap: $("#scaleWrap"), heartG: $("#heartG"), feather: $("#feather"), cat: $("#cat"), kFeather: $("#kFeather"),
   };
@@ -168,9 +168,10 @@
 
   // ---------- questions ----------
   function showQuestion() {
-    const [text] = qs[idx];
+    const [text, , zh] = qs[idx];
     el.qnum.textContent = `Confession ${idx + 1} of ${N_Q}${doubleNext ? " · 🍲 COUNTS DOUBLE!" : ""}`;
     el.qtext.textContent = text;
+    el.qzh.textContent = zh || "";
     el.qcard.classList.remove("enter", "speed"); void el.qcard.offsetWidth; el.qcard.classList.add("enter");
     [...el.progress.children].forEach((p, i) => p.classList.toggle("cur", i === idx));
     el.answers.hidden = false; el.liar.hidden = true; el.evt.hidden = true;
@@ -181,14 +182,14 @@
       speedNext = false;
       el.qcard.classList.add("speed");
       const bar = document.createElement("div"); bar.className = "speedbar"; el.qcard.appendChild(bar);
-      let left = 5; const t0 = performance.now();
-      el.qnum.textContent = `⚡ SPEED ROUND · 5 seconds!`;
+      const SPD = 8; let left = SPD; const t0 = performance.now();
+      el.qnum.textContent = `⚡ SPEED ROUND · ${SPD} seconds!`;
       clearInterval(speedTimer);
       speedTimer = setInterval(() => {
         const e = (performance.now() - t0) / 1000;
-        bar.style.transform = `scaleX(${Math.max(0, 1 - e / 5)})`;
-        if (Math.ceil(5 - e) !== left) { left = Math.ceil(5 - e); if (left > 0) Sfx.beep(left <= 2); el.qnum.textContent = `⚡ SPEED ROUND · ${Math.max(0, left)}…`; }
-        if (e >= 5) { clearInterval(speedTimer); if (!busy) { say(`"TOO SLOW! Ammit counts silence as a YES. 😋"`); answer(true, true); } }
+        bar.style.transform = `scaleX(${Math.max(0, 1 - e / SPD)})`;
+        if (Math.ceil(SPD - e) !== left) { left = Math.ceil(SPD - e); if (left > 0) Sfx.beep(left <= 2); el.qnum.textContent = `⚡ SPEED ROUND · ${Math.max(0, left)}…`; }
+        if (e >= SPD) { clearInterval(speedTimer); if (!busy) { say(`"TOO SLOW! Ammit counts silence as a YES. 😋"`); answer(true, true); } }
       }, 50);
     }
   }
@@ -218,7 +219,7 @@
       angVel += 1.5;
     }
     updateHeart();
-    await sleep(1500);
+    await sleep(2600);
     if (!isYes && idx > 0 && liarChecks < 2 && Math.random() < 0.38) { liarChecks++; return liarCheck(); }
     next();
   }
@@ -247,7 +248,7 @@
       say(`"Anubis apologizes. Awkward silence in the afterlife… 🦗"`);
     }
     updateHeart();
-    await sleep(1600);
+    await sleep(2600);
     next();
   }
 
@@ -262,8 +263,9 @@
   function eventPanel(who, title, text, opts) {
     el.answers.hidden = true; el.liar.hidden = true;
     el.evt.classList.remove("result");
-    el.evt.innerHTML = `<div class="evt-who">${who}</div><div class="evt-title">${title}</div><div class="evt-text">${text}</div>
-      <div class="evt-opts">${opts.map((o, i) => `<button class="btn ${o.c || ""}" data-i="${i}">${o.t} <span class="key">${i + 1}</span></button>`).join("")}</div>`;
+    const [tEn, tZh] = String(title).split("|");
+    el.evt.innerHTML = `<div class="evt-who">${who}</div><div class="evt-title">${tEn}</div>${tZh ? `<div class="evt-zh zh">${tZh}</div>` : ""}<div class="evt-text">${text}</div>
+      <div class="evt-opts">${opts.map((o, i) => `<button class="btn ${o.c || ""}" data-i="${i}"><span class="two">${o.t}${o.z ? `<span class="zh">${o.z}</span>` : ""}</span> <span class="key">${i + 1}</span></button>`).join("")}</div>`;
     el.evt.hidden = false;
     el.qcard.classList.remove("enter"); void el.qcard.offsetWidth; el.qcard.classList.add("enter");
     Sfx.fanfare();
@@ -273,20 +275,20 @@
       el.evt.querySelectorAll("button").forEach((b) => (b.onclick = () => choose(+b.dataset.i)));
     });
   }
-  async function eventResult(text, ms = 2300) {
+  async function eventResult(text, ms = 3600) {
     el.evt.classList.add("result");
     el.evt.querySelector(".evt-text").innerHTML = text;
     updateHeart();
     await sleep(ms);
   }
-  function setQ(label, title) { el.qnum.textContent = label; el.qtext.textContent = title; }
+  function setQ(label, title, zh) { el.qnum.textContent = label; el.qtext.textContent = title; el.qzh.textContent = zh || ""; }
 
   async function runEvent(k) {
     busy = true; eventsSeen.push(k);
     if (k === "bastet") {
-      setQ("✨ Divine interruption", "Bastet the cat goddess has arrived!");
+      setQ("✨ Divine interruption", "Bastet the cat goddess has arrived!", "猫女神巴斯特来了！");
       say(`"Oh no. Not the cat. She does whatever she wants. 🐈"`);
-      await eventPanel("🐈 Bastet, goddess of cats", "A CAT JUMPED ON THE SCALE!", "Bastet is choosing a side… cats are unpredictable.", [{ t: "🐾 Pet the cat", c: "blue" }, { t: "🙏 Please, kitty!", c: "green" }]);
+      await eventPanel("🐈 Bastet, goddess of cats", "A CAT JUMPED ON THE SCALE!|一只猫跳上了天平！", "Bastet is choosing a side… cats are unpredictable.", [{ t: "🐾 Pet the cat", z: "摸摸猫", c: "blue" }, { t: "🙏 Please, kitty!", z: "求求你，小猫！", c: "green" }]);
       const likes = Math.random() < 0.6;
       el.cat.hidden = false; el.cat.style.left = "-15vw"; el.cat.style.top = "40vh"; delete el.cat.dataset.on;
       Sfx.tone(700, 0.25, { type: "sine", vol: 0.2, slide: 1100 }); // meow-ish
@@ -299,40 +301,40 @@
       el.cat.dataset.on = ""; el.cat.style.left = "110vw";
       setTimeout(() => (el.cat.hidden = true), 900);
     } else if (k === "bribe") {
-      setQ("🤫 A secret offer", "Anubis is… hungry?");
+      setQ("🤫 A secret offer", "Anubis is… hungry?", "阿努比斯……饿了？");
       say(`"Psst… Anubis hasn't eaten in 3,000 years."`);
-      const c = await eventPanel("🐺 Anubis whispers", "BRIBE THE GOD?", "Offer Anubis a hot bowl of koshary to erase one of your sins?", [{ t: "🍲 Offer koshary", c: "" }, { t: "🙅 No, I'm honest", c: "green" }]);
+      const c = await eventPanel("🐺 Anubis whispers", "BRIBE THE GOD?|贿赂神明？", "Offer Anubis a hot bowl of koshary to erase one of your sins?<br><span class='zh'>送阿努比斯一碗库沙丽，抹掉一项罪？</span>", [{ t: "🍲 Offer koshary", z: "送库沙丽", c: "" }, { t: "🙅 No, I'm honest", z: "不，我很诚实", c: "green" }]);
       if (c === 0) {
         if (Math.random() < 0.5) { bribed = true; W -= 3; Sfx.coin(); await eventResult("😋 Anubis ate the koshary… and erased a sin. <b>−3 deben.</b> (This never happened. 🤫)"); }
         else { bribed = false; W += 3; Sfx.buzz(); ammitSays("BRIBERY! 😱"); await eventResult("😡 BRIBING A GOD?! Anubis is offended (and still hungry). <b>+3 deben!</b>"); }
       } else { W -= 1; Sfx.ding(); await eventResult("😇 Honesty! Ma'at is impressed. <b>−1 deben.</b>"); }
     } else if (k === "quiz") {
-      const [q, opts, right, fact] = pick(TRIVIA.filter((t) => !eventsSeen.includes(t[0])));
+      const [q, opts, right, fact, qz, oz] = pick(TRIVIA.filter((t) => !eventsSeen.includes(t[0])));
       eventsSeen.push(q);
-      setQ("📜 Thoth's pop quiz", "Answer correctly to erase a sin!");
+      setQ("📜 Thoth's pop quiz", "Answer correctly to erase a sin!", "答对可以抹掉一项罪！");
       say(`"Thoth, god of wisdom, has a question for you…"`);
       const order = shuffle([0, 1, 2]);
-      const c = await eventPanel("📜 Thoth, god of wisdom", "POP QUIZ!", q, order.map((i) => ({ t: opts[i], c: "blue" })));
-      if (order[c] === right) { quiz.right++; W -= 2; Sfx.ding(); Confetti.burst(50); await eventResult(`✅ CORRECT! ${fact} <b>−2 deben</b>`, 2800); }
-      else { quiz.wrong++; W += 1; Sfx.buzz(); await eventResult(`❌ Wrong! ${fact} <b>+1 deben</b>`, 2800); }
+      const c = await eventPanel("📜 Thoth, god of wisdom", "POP QUIZ!|知识问答！", `${q}<br><span class='zh'>${qz}</span>`, order.map((i) => ({ t: opts[i], z: oz[i], c: "blue" })));
+      if (order[c] === right) { quiz.right++; W -= 2; Sfx.ding(); Confetti.burst(50); await eventResult(`✅ CORRECT! 答对了！ ${fact} <b>−2 deben</b>`, 4500); }
+      else { quiz.wrong++; W += 1; Sfx.buzz(); await eventResult(`❌ Wrong! 答错了！ ${fact} <b>+1 deben</b>`, 4500); }
     } else if (k === "friend") {
-      setQ("👥 Witness time", "The gods call a witness!");
+      setQ("👥 Witness time", "The gods call a witness!", "众神传唤证人！");
       say(`"A FRIEND must testify. Choose wisely, friend…"`);
-      const c = await eventPanel("👥 Witness testimony", "FRIEND, TESTIFY!", `One friend must answer: is ${name ? esc(name) : "this person"} a good person?`, [{ t: "😇 An angel", c: "green" }, { t: "😈 Little devil", c: "red" }, { t: "🤷 We just met", c: "ghost" }]);
+      const c = await eventPanel("👥 Witness testimony", "FRIEND, TESTIFY!|朋友，请作证！", `One friend must answer: is ${name ? esc(name) : "this person"} a good person?<br><span class='zh'>请一位朋友回答：这个人是好人吗？</span>`, [{ t: "😇 An angel", z: "天使", c: "green" }, { t: "😈 Little devil", z: "小恶魔", c: "red" }, { t: "🤷 We just met", z: "刚认识", c: "ghost" }]);
       if (c === 0) { W -= 1; Sfx.ding(); await eventResult("😇 The friend vouches for you! <b>−1 deben.</b> (Buy them a coffee later.)"); }
       else if (c === 1) { W += 2; Sfx.buzz(); ammitSays("BETRAYAL! 😋"); await eventResult("😈 BETRAYED by your own friend! <b>+2 deben.</b> Classic."); }
       else { Sfx.meh(); await eventResult("🤷 \"We just met.\" …Anubis respects the honesty. Nothing changes."); }
     } else if (k === "speed") {
-      setQ("🐊 Uh oh…", "Ammit is getting impatient!");
+      setQ("🐊 Uh oh…", "Ammit is getting impatient!", "阿米特等不及了！");
       say(`"Ammit is HUNGRY. She wants answers. FAST."`);
-      await eventPanel("🐊 Ammit the Devourer", "⚡ SPEED ROUND!", "Next confession: only <b>5 seconds</b> to answer. No answer = GUILTY!", [{ t: "😰 I'm ready!", c: "red" }]);
+      await eventPanel("🐊 Ammit the Devourer", "⚡ SPEED ROUND!|快速回答！", "Next confession: only <b>8 seconds</b> to answer. No answer = GUILTY!<br><span class='zh'>下一题只有8秒！不回答 = 有罪！</span>", [{ t: "😰 I'm ready!", z: "我准备好了！", c: "red" }]);
       speedNext = true;
       await eventResult("Get ready… 3… 2… 1…", 1200);
     } else if (k === "sneeze") {
-      setQ("🤧 Achoo!", "Ma'at sneezed!");
+      setQ("🤧 Achoo!", "Ma'at sneezed!", "玛阿特打了个喷嚏！");
       say(`"Bless you, Ma'at! …wait, where did the feather go?!"`);
       el.feather.classList.add("gone"); el.kFeather.hidden = false; Sfx.whoosh();
-      await eventPanel("🪶 Ma'at, goddess of truth", "THE FEATHER FLEW AWAY!", "For the next confession, the feather is replaced by… a <b>bowl of koshary</b>. Your answer counts <b>DOUBLE!</b>", [{ t: "🍲 Oh no", c: "" }]);
+      await eventPanel("🪶 Ma'at, goddess of truth", "THE FEATHER FLEW AWAY!|羽毛飞走了！", "For the next confession, the feather is replaced by… a <b>bowl of koshary</b>. Your answer counts <b>DOUBLE!</b><br><span class='zh'>下一题算双倍！</span>", [{ t: "🍲 Oh no", z: "糟糕", c: "" }]);
       doubleNext = true;
     }
     el.evt.hidden = true;
@@ -347,7 +349,7 @@
     Sfx.stopBeat(); clearSpeed(); restoreFeather();
     el.answers.hidden = true; el.liar.hidden = true; el.evt.hidden = true;
     [...el.progress.children].forEach((p) => p.classList.remove("cur"));
-    setQ("The gods have heard enough", "THE WEIGHING BEGINS…");
+    setQ("The gods have heard enough", "THE WEIGHING BEGINS…", "称重开始……");
     el.qcard.classList.remove("enter"); void el.qcard.offsetWidth; el.qcard.classList.add("enter");
     say(`"Silence in the hall! 🤫"`);
     Sfx.drumroll(2.6);
@@ -390,7 +392,7 @@
       say(`"Zero sins. ZERO. Anubis has been doing this for 5,000 years and has never seen this."`);
       wobble = 6; await sleep(1600); wobble = 0;
       await sleep(1200);
-      finish({ mood: "meh", emoji: "😇", phrase: { ar: "والله؟!", en: "Wallahi?!", tr: "Really?! (Swear to God?!)", gloss: "<b>Wallahi</b> = \"I swear\" / \"really?!\" Egyptians say it 50 times a day" }, headline: `Zero sins?! Either you are a <b>saint</b>… or the <b>best liar in 5,000 years</b>. The gods let you in, but Anubis will be <i>watching you</i>. 👀`, stats, extra: passport("ALLEGEDLY PURE", "meh", "pure") });
+      finish({ mood: "meh", emoji: "😇", phrase: { ar: "والله؟!", en: "Wallahi?!", tr: "Really?! (Swear to God?!)", zh: "真的吗？！", gloss: "<b>Wallahi</b> = \"I swear\" / \"really?!\" Egyptians say it 50 times a day" }, headline: `Zero sins?! Either you are a <b>saint</b>… or the <b>best liar in 5,000 years</b>. The gods let you in, but Anubis will be <i>watching you</i>. 👀`, stats, extra: passport("ALLEGEDLY PURE", "meh", "pure") });
     } else if (r < 0.15) {
       el.rays.classList.add("on");
       showBig("PURE GOLD! 👑", "VIP entrance to paradise");
@@ -421,7 +423,7 @@
       finish({ mood: "lose", emoji: "🐊", headline: `<b>Ammit ate your heart.</b> She says it tasted like ${heaviest ? "<i>“" + heavyTxt + "”</i>" : "pure guilt"}… with a little bit of garlic. 🧄`, stats, extra: passport("DEVOURED", "bad", "bad"), phrase: pick(EG.PHRASES.lose) });
     } else {
       await eatenSequence(true);
-      finish({ mood: "lose", emoji: "🌶️", phrase: { ar: "حراق!", en: "7arraa'!", tr: "SPICY! (too hot to handle)", gloss: "<b>7arraa'</b> = burning hot, spicy · the 7 is the letter ح" }, headline: `So many sins that your heart was <b>TOO SPICY</b> 🌶️. Ammit took one bite and spat it out! The gods are sending you <b>back to Earth to try again</b>. Maybe… eat less of your roommate's food?`, stats, extra: passport("RETURNED", "bad", "spicy") });
+      finish({ mood: "lose", emoji: "🌶️", phrase: { ar: "حراق!", en: "7arraa'!", tr: "SPICY! (too hot to handle)", zh: "太辣了！", gloss: "<b>7arraa'</b> = burning hot, spicy · the 7 is the letter ح" }, headline: `So many sins that your heart was <b>TOO SPICY</b> 🌶️. Ammit took one bite and spat it out! The gods are sending you <b>back to Earth to try again</b>. Maybe… eat less of your roommate's food?`, stats, extra: passport("RETURNED", "bad", "spicy") });
     }
   }
   async function eatenSequence(spit) {

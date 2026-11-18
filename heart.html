@@ -6,8 +6,8 @@
 <meta name="theme-color" content="#10234a">
 <meta name="description" content="Egypt booth: 4 funny interactive Egyptian games. Weighing of the Heart, Haggle in the Bazaar, Mummy Wrap Race, Cross a Cairo Street.">
 <title>Weighing of the Heart · ميزان القلب</title>
-<link rel="stylesheet" href="css/base.css?v=20261118e">
-<link rel="stylesheet" href="css/heart.css?v=20261118e">
+<link rel="stylesheet" href="css/base.css?v=20261118g">
+<link rel="stylesheet" href="css/heart.css?v=20261118g">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔺</text></svg>">
 </head>
 <body>
@@ -24,9 +24,10 @@
     <h1>Weighing of the Heart</h1>
     <div class="ar big">ميزان القلب</div>
     <p class="story">When an ancient Egyptian died, the god <b>Anubis</b> put their heart on a scale against the <b>Feather of Truth</b>. Light heart → paradise 🌾. Heavy with sins → <b>Ammit the Devourer</b> 🐊 ate it. <i>Forever.</i></p>
-    <p class="rule">Answer <b>7 confessions</b> honestly. <span class="warn">Your friends are watching. 👀</span></p>
+    <p class="story-zh zh">古埃及人死后，阿努比斯会把心脏和“真理之羽”放在天平上称重。心太重？怪兽阿米特就会把它吃掉！</p>
+    <p class="rule">Answer <b>7 confessions</b> honestly. <span class="warn">Your friends are watching. 👀</span> <span class="zh rule-zh">诚实回答7个问题！</span></p>
     <label class="name-lbl">Your name for your <b>Afterlife Passport</b> (optional)
-      <input id="playerName" maxlength="14" placeholder="e.g. Sara" autocomplete="off" spellcheck="false">
+      <input id="playerName" maxlength="14" placeholder="e.g. Youssef" autocomplete="off" spellcheck="false">
     </label>
     <div class="name-preview" id="namePreview"></div>
     <button class="btn red big-btn" id="startBtn">Enter the Hall <span class="key">Enter</span></button>
@@ -105,17 +106,18 @@
       <div class="qcard" id="qcard">
         <div class="qnum" id="qnum">Confession 1 of 7</div>
         <div class="qtext" id="qtext">…</div>
+        <div class="qzh zh" id="qzh"></div>
       </div>
       <div class="answers" id="answers">
-        <button class="btn red ans" id="yesBtn">😬 YES, guilty <span class="key">Y</span></button>
-        <button class="btn green ans" id="noBtn">😇 NO, innocent <span class="key">N</span></button>
+        <button class="btn red ans" id="yesBtn">YES <span class="key">Y</span></button>
+        <button class="btn green ans" id="noBtn">NO <span class="key">N</span></button>
       </div>
       <div class="liar" id="liar" hidden>
         <div class="liar-title">🚨 LIE DETECTOR 🚨</div>
-        <div class="liar-text">Anubis's ears are twitching… <b>FRIENDS!</b> Was that really the truth?</div>
+        <div class="liar-text">Anubis's ears are twitching… <b>FRIENDS!</b> Was that really the truth?<div class="zh liar-zh">测谎仪！朋友们：这是真话吗？</div></div>
         <div class="answers">
-          <button class="btn red ans" id="liarBtn">🤥 LIAR! <span class="key">L</span></button>
-          <button class="btn blue ans" id="truthBtn">✅ It's true <span class="key">T</span></button>
+          <button class="btn red ans" id="liarBtn">🤥 LIAR! <span class="zh-sm">骗子</span> <span class="key">L</span></button>
+          <button class="btn blue ans" id="truthBtn">✅ It's true <span class="zh-sm">是真的</span> <span class="key">T</span></button>
         </div>
       </div>
       <div class="evt" id="evt" hidden></div>
@@ -150,7 +152,7 @@
   <div class="koshary-feather" id="kFeather" hidden>🍲</div>
 </section>
 
-<script src="js/common.js?v=20261118e"></script>
-<script src="js/heart.js?v=20261118e"></script>
+<script src="js/common.js?v=20261118g"></script>
+<script src="js/heart.js?v=20261118g"></script>
 </body>
 </html>

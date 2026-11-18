@@ -4,7 +4,7 @@
 
   mountGamebar("🚦 Cross a Cairo Street");
   const Q = new URLSearchParams(location.search);
-  const GAME_TIME = +Q.get("t") || 60;
+  const GAME_TIME = +Q.get("t") || 120;
 
   // =========================================================
   //  WORLD GEOMETRY
@@ -861,10 +861,10 @@
     setTimeout(() => {
       ov.hud.hidden = true;
       const titles = [
-        [g.crossings >= 5, "King of Ramses Square 👑", "You crossed like a true Cairene. Microbus drivers now raise THEIR hand for YOU.", "win"],
-        [g.crossings >= 3, "Microbus Whisperer 🚐", "The traffic respects you. Your grandmother would be proud (and terrified).", "win"],
-        [g.crossings === 2, "Certified Cairo Pedestrian 🚶", "Two streets! You walk like you own the road. In Cairo, that's the secret.", "win"],
-        [g.crossings === 1, "Brave Tourist 🧳", "One street crossed! Most tourists are still standing on the sidewalk from 2019.", "meh"],
+        [g.crossings >= 8, "King of Ramses Square 👑", "You crossed like a true Cairene. Microbus drivers now raise THEIR hand for YOU.", "win"],
+        [g.crossings >= 5, "Microbus Whisperer 🚐", "The traffic respects you. Your grandmother would be proud (and terrified).", "win"],
+        [g.crossings >= 3, "Certified Cairo Pedestrian 🚶", `${g.crossings} streets! You walk like you own the road. In Cairo, that's the secret.`, "win"],
+        [g.crossings >= 1, "Brave Tourist 🧳", `${g.crossings === 1 ? "One street" : "Two streets"} crossed! Most tourists are still standing on the sidewalk from 2019.`, "meh"],
         [g.crossings === 0 && g.hits === 0, "The Statue 🗿", "You stood on the sidewalk waiting for the traffic to stop. It never stops. Never.", "lose"],
         [true, "The Bowling Pin 🎳", "Zero streets, many bumps. The cars said ma3lesh… you said ouch.", "lose"],
       ];

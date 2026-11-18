@@ -6,8 +6,8 @@
 <meta name="theme-color" content="#10234a">
 <meta name="description" content="Egypt booth: 4 funny interactive Egyptian games. Weighing of the Heart, Haggle in the Bazaar, Mummy Wrap Race, Cross a Cairo Street.">
 <title>Cross a Cairo Street · عدّي الشارع</title>
-<link rel="stylesheet" href="css/base.css?v=20261118e">
-<link rel="stylesheet" href="css/street.css?v=20261118e">
+<link rel="stylesheet" href="css/base.css?v=20261118g">
+<link rel="stylesheet" href="css/street.css?v=20261118g">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔺</text></svg>">
 </head>
 <body>
@@ -16,7 +16,7 @@
 <!-- HUD -->
 <div class="hud" id="hud" hidden>
   <div class="h-street"><span class="lbl">📍 Now crossing</span><b id="hStreet">Zamalek</b></div>
-  <div class="h-time"><b id="hTime">60</b><span>sec</span></div>
+  <div class="h-time"><b id="hTime">120</b><span>sec</span></div>
   <div class="h-score"><span class="lbl">Score</span><b id="hScore">0</b><div class="bowls" id="hBowls"></div></div>
   <div class="h-hand"><span class="lbl">✋ Cairo hand power</span><div class="pbar"><i id="hPower"></i></div><span class="hint" id="hHint">Hold H / raise your hand</span></div>
 </div>
@@ -40,7 +40,8 @@
     <div class="eyebrow">🚦 There are no traffic lights. Only faith.</div>
     <h1>Cross a Cairo Street</h1>
     <div class="ar big">عدّي الشارع</div>
-    <p class="story">In Cairo, cars don't stop for you. You raise your hand, look the driver in the eye… and <b>WALK</b>. 🖐️ Cross as many streets as you can in <b>60 seconds</b>. Each street is crazier than the last!</p>
+    <div class="zh" style="color:#6b4a2b;font-size:clamp(14px,2vh,18px)">在开罗过马路：举起手，车就会停！🖐️</div>
+    <p class="story">In Cairo, cars don't stop for you. You raise your hand, look the driver in the eye… and <b>WALK</b>. 🖐️ Cross as many streets as you can in <b>2 minutes</b>. Each street is crazier than the last!</p>
     <div class="modes">
       <button class="mode" id="modeCam">
         <span class="m-ico">📷🕺</span>
@@ -79,7 +80,7 @@
 
 <div class="countdown" id="countdown" hidden><div id="cdNum">3</div></div>
 
-<script src="js/common.js?v=20261118e"></script>
-<script src="js/street.js?v=20261118e"></script>
+<script src="js/common.js?v=20261118g"></script>
+<script src="js/street.js?v=20261118g"></script>
 </body>
 </html>

@@ -6,8 +6,8 @@
 <meta name="theme-color" content="#10234a">
 <meta name="description" content="Egypt booth: 4 funny interactive Egyptian games. Weighing of the Heart, Haggle in the Bazaar, Mummy Wrap Race, Cross a Cairo Street.">
 <title>Mummy Wrap Race · سباق المومياء</title>
-<link rel="stylesheet" href="css/base.css?v=20261118e">
-<link rel="stylesheet" href="css/mummy.css?v=20261118e">
+<link rel="stylesheet" href="css/base.css?v=20261118g">
+<link rel="stylesheet" href="css/mummy.css?v=20261118g">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔺</text></svg>">
 </head>
 <body>
@@ -22,6 +22,7 @@
     <div class="eyebrow">🧻 Team challenge · needs 4 brave humans</div>
     <h1>Mummy Wrap Race</h1>
     <div class="ar big">سباق المومياء</div>
+    <div class="zh" style="color:#6b4a2b;font-size:clamp(14px,2vh,18px)">木乃伊大赛：用卫生纸把队友包成木乃伊！</div>
     <ol class="steps">
       <li><span>👯</span><div><b>2 teams</b>: one <i>Wrapper</i> + one <i>Mummy</i> each</div></li>
       <li><span>🧻</span><div>Each team gets <b>1 roll</b> of toilet paper</div></li>
@@ -41,7 +42,7 @@
     </div>
     <div class="dur">
       <span>Time:</span>
-      <button class="chip" data-s="45">45s</button><button class="chip on" data-s="60">60s</button><button class="chip" data-s="90">90s</button>
+      <button class="chip" data-s="60">1 min</button><button class="chip on" data-s="120">2 min</button><button class="chip" data-s="180">3 min</button>
       <span class="sep"></span>
       <button class="chip on curse-chip" id="curseChip" title="Surprise challenges during the race">😈 Pharaoh's curses: ON</button>
     </div>
@@ -58,7 +59,7 @@
         <circle cx="110" cy="110" r="96" fill="rgba(0,0,0,.45)" stroke="rgba(255,255,255,.12)" stroke-width="16"/>
         <circle id="ring" cx="110" cy="110" r="96" fill="none" stroke="#e3b23c" stroke-width="16" stroke-linecap="round" transform="rotate(-90 110 110)" stroke-dasharray="603.2" stroke-dashoffset="0"/>
       </svg>
-      <div class="clock-num" id="clockNum">60</div>
+      <div class="clock-num" id="clockNum">120</div>
       <div class="clock-lbl">seconds</div>
     </div>
     <div class="team-panel tp-b"><div class="tp-mummy">🧟‍♀️</div><div class="tp-name" id="nameB">Team B</div></div>
@@ -131,7 +132,7 @@
 <div class="countdown" id="countdown" hidden><div id="cdNum">3</div></div>
 <div class="bigmsg" id="bigmsg" hidden></div>
 
-<script src="js/common.js?v=20261118e"></script>
-<script src="js/mummy.js?v=20261118e"></script>
+<script src="js/common.js?v=20261118g"></script>
+<script src="js/mummy.js?v=20261118g"></script>
 </body>
 </html>

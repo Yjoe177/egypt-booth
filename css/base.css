@@ -22,6 +22,7 @@
   --green: #2e9e5b;
   --display: "Lalezar", "Impact", "Arial Black", system-ui, sans-serif;
   --body: "Cairo", "Segoe UI", system-ui, sans-serif;
+  --zh: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "Hiragino Sans GB", sans-serif;
   --hiero: "Hiero", "Segoe UI Historic", "Noto Sans Egyptian Hieroglyphs", serif;
   --radius: 18px;
   --shadow: 0 10px 30px rgba(0,0,0,.35);
@@ -42,6 +43,9 @@ body {
 input, textarea { user-select: text; -webkit-user-select: text; }
 button { font-family: inherit; cursor: pointer; }
 .ar { font-family: var(--display); direction: rtl; }
+.zh { font-family: var(--zh); font-weight: 600; letter-spacing: .5px; }
+.closure-zh { font-family: var(--zh); font-size: clamp(14px, 1.9vh, 18px); color: var(--lapis-2); opacity: .85; margin: -4px 0 6px; }
+.btn .zh-sm { font-family: var(--zh); font-size: .62em; font-weight: 600; opacity: .85; margin-left: .2em; }
 
 /* ---------- buttons ---------- */
 .btn {
